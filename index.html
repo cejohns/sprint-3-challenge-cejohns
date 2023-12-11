@@ -75,8 +75,13 @@
       pop() {
        
 
-        // Remove the last element from the array and return it
-        return this.numbers.pop();
+        if (this.numbers.length === 0) {
+            // If the array is empty, return undefined or handle it as per your requirement
+            return [undefined, this.numbers];
+        }
+
+        const poppedElement = this.numbers.pop();
+        return [poppedElement, this.numbers];
     }
 
 

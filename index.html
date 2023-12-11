@@ -74,14 +74,14 @@
       // 🧠 Implement a `pop` method which removes the last integer from `ints`  and returns it
       pop() {
         if (this.numbers.length === 0) {
+          if (this.numbers.length === 0) {
             // If the array is empty, return undefined or handle it as per your requirement
-            return [undefined, this.numbers];
+            return undefined;
         }
-        // Remove the last element and return it
-        const poppedValue = this.numbers.pop();
-        //return [poppedValue, this.numbers];
-        return poppedValue;;
-    }
+
+        // Remove the last element from the array and return it
+        return this.numbers.pop();
+    }}
 
 
       
@@ -92,9 +92,10 @@
     if (Number.isInteger(value)) {
       this.numbers.push(value);
       return this.numbers;
-    } else {
+    } 
+    /*else {
       console.error("Error: Please provide an integer.");
-    }
+    }*/
   }
 
   

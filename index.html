@@ -80,8 +80,8 @@
             return [undefined, this.numbers];
         }
 
-        const poppedElement = this.numbers.pop();
-        return [poppedElement, this.numbers];
+        const popped = this.numbers.pop();
+        return [popped, this.numbers];
     }
 
 
@@ -90,9 +90,10 @@
    
       
       push(value) {
-    if (Number.isInteger(value)) {
-      this.numbers.push(value);
-      return this.numbers;
+       let original = this.numbers; let newPush;
+        if (Number.isInteger(value)) {
+      newPush = this.numbers.push(value);
+      return [this.numbers.slice(), this.numbers.slice()];
     } 
     /*else {
       console.error("Error: Please provide an integer.");
@@ -279,12 +280,15 @@
       //      * The method returns the string "Yum!" if any ants by the given name exist
       //      * The method returns the string "<ant name> not found!" if no ants by the given name exist
         feed(antName) {
-          const ant = this.ants.find((ant) => ant.name === antName);
+          const antsToFeed = this.ants.filter((ant) => ant.name === antName);
 
-          if (ant) {
-            // Increase health by 15 points
-            ant.health += 15;
-            return "Yum!";
+
+          if (antsToFeed.length > 0) {
+            for (const ant of antsToFeed) {
+        ant.health += 15;
+      }
+      return "Yum!";
+
           } else {
             return `${antName} not found!`;
           }

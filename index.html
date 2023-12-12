@@ -74,7 +74,7 @@
       // 🧠 Implement a `pop` method which removes the last integer from `ints`  and returns it
       pop() {
        // const popped = this.numbers.pop();
-        return this.numbers.pop(number => typeof number === 'number' && number);
+        return this.ints.pop(number => typeof number === 'number' && number);
 
         /*if (this.numbers.length === 0) {
             // If the array is empty, return undefined or handle it as per your requirement
@@ -94,8 +94,8 @@
    
       
       push(value) {
-        this.numbers.push(value);
-    return this.numbers;
+        this.ints.push(value);
+    return this.ints;
     
     
   }

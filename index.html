@@ -81,7 +81,7 @@
         }
 
         const popped = this.numbers.pop();
-        return [popped, this.numbers];
+        return popped; //this.numbers;
     }
 
 
@@ -93,7 +93,7 @@
        let original = this.numbers; let newPush;
         if (Number.isInteger(value)) {
       newPush = this.numbers.push(value);
-      return [this.numbers.slice(), this.numbers.slice()];
+      return this.numbers.slice(), this.numbers.slice();
     } 
     /*else {
       console.error("Error: Please provide an integer.");

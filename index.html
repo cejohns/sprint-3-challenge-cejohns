@@ -47,41 +47,36 @@
     // 👉 CHALLENGE 1 - Integers
     class Integers {
       // 🧠 Constructor takes **any** number of arguments, which are integers
-      constructor(...numbers) {
-    this.numbers = numbers;
+      constructor(...ints) {
+    this.ints = ints;
     
     
   }
       // 🧠 Instances have an `ints` property which is an array holding the integers above in the same order
       // 🧠 Implement a `getAll` method which returns the data held in the `ints` property
       getAll(){
-        return this.numbers.filter(number => typeof number === 'number');;
+        return this.ints.filter(number => typeof number === 'number');;
       }
       // 🧠 Implement a `getEvens` method which returns an array with the integers that are even
       getEvens() {
     // Use the filter method to get only even numbers
-    return this.numbers.filter(number => typeof number === 'number' && number % 2 === 0);
+    return this.ints.filter(number => typeof number === 'number' && number % 2 === 0);
   }
       // 🧠 Implement a `getNegatives` method which returns an array with the integers that negative
       getNegatives(){
-        return this.numbers.filter(number => typeof number === 'number' && number < 0);
+        return this.ints.filter(number => typeof number === 'number' && number < 0);
       }
       // 🧠 Implement a `getAllSquared` method which returns an array with the integers squared
       getAllSquared(){
-        return this.numbers.map(number => typeof number === 'number' && number * number);
+        return this.ints.map(number => typeof number === 'number' && number * number);
         
       }
       // 🧠 Implement a `pop` method which removes the last integer from `ints`  and returns it
       pop() {
-       // const popped = this.numbers.pop();
+      
         return this.ints.pop(number => typeof number === 'number' && number);
 
-        /*if (this.numbers.length === 0) {
-            // If the array is empty, return undefined or handle it as per your requirement
-            return [undefined, this.numbers];
-        }else{
-           const popped = this.numbers.pop();
-        return [popped, this.numbers];*/
+      
         
         
 
@@ -111,8 +106,8 @@
     }
 
     const result = [];
-    for (let i = 0; i < this.numbers.length; i += n) {
-      result.push(this.numbers[i]);
+    for (let i = 0; i < this.ints.length; i += n) {
+      result.push(this.ints[i]);
     }
 
     return result;
@@ -122,7 +117,7 @@
   
       // 🧠 Implement a `getAllReversed` method which returns the ints in reverse order
       getAllReversed = function() {
-  return this.numbers.slice().reverse();
+  return this.ints.slice().reverse();
 };
       // ❗ WARNING: except for `getAllReversed`, methods must respect the order of the integers
       // ❗ WARNING: note that none of the methods actually mutate the `ints` property
